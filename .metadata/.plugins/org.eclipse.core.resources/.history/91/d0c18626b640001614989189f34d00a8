@@ -1,0 +1,14 @@
+
+public class Main {
+
+	//FIX POPPING FOR SIMPLE STACK
+	
+	public static void main(String[] args) 
+	{
+		Stack test = new SimpleStack();
+		System.out.println(test.isEmpty());
+
+
+	}
+
+}

@@ -1,0 +1,134 @@
+
+public class Fraction 
+{
+	private int myNumerator;
+    private int myDenominator;
+    
+    public Fraction(int n, int d)
+    {
+        myNumerator = n;
+        myDenominator = d;
+        simplify();
+    }
+    
+    public Fraction(int n)
+    {
+        myNumerator = n;
+        myDenominator = 1;
+    }
+    
+    public Fraction()
+    {
+        myNumerator = 0;
+        myDenominator = 1;
+    }
+    
+    public Fraction subtract(Fraction other)
+    {
+    	Fraction result = new Fraction(myNumerator*other.myDenominator - other.myNumerator * myDenominator, myDenominator*other.myDenominator);
+    	System.out.println(result.getNumerator() + "/" + result.getDenominator());
+    	System.out.println(myNumerator*other.myDenominator - other.myNumerator * myDenominator);
+    	return result;
+    }
+    
+    public int getNumerator()
+    {
+    	return myNumerator;
+    }
+    
+    public int getDenominator()
+    {
+    	return myDenominator;
+    }
+    
+    public Fraction divide(Fraction other)
+    {
+    	Fraction result = new Fraction(myNumerator * other.myDenominator, 
+                myDenominator * other.myNumerator);
+    	return result;
+    }
+    
+    public void reciprocal()
+    {
+    	int placeholder = 0;
+    	placeholder = this.getNumerator();
+    	myNumerator = myDenominator;
+    	myDenominator = placeholder;
+    	
+    }
+    
+    public Fraction plus(Fraction other)
+    {
+        Fraction result;
+        
+        result = new Fraction(myNumerator * other.myDenominator + 
+                              other.myNumerator * myDenominator,
+                              myDenominator * other.myDenominator);
+        
+        return result;
+    }
+        
+        
+    public Fraction times(Fraction other)
+    {
+        Fraction result;
+        
+        result = new Fraction(myNumerator * other.myNumerator, 
+                              myDenominator * other.myDenominator);
+        
+        return result;
+    }
+    
+    public static Fraction times(Fraction f1, Fraction f2)
+    {
+        Fraction result;
+        
+        result = new Fraction(f1.getNumerator() * f2.getNumerator(), 
+                              f1.getDenominator() * f2.getDenominator());
+        
+        return result;
+    }
+    
+    public String toString()
+    {
+    	if(myDenominator == 1)
+    	{
+    		return Integer.toString(myNumerator);
+    	}
+    	else if(myDenominator == -1)
+    	{
+    		return Integer.toString(-myNumerator);
+    	}
+    	else if(Math.abs(myNumerator)>Math.abs(myDenominator))
+    	{
+    		return Integer.toString(myNumerator/myDenominator) + " " +  Integer.toString(myNumerator%myDenominator) + "/" + myDenominator;
+    	}
+    	return myNumerator + "/" + myDenominator;
+    }
+    
+    private void simplify()
+    {
+    	if(myDenominator == 0)
+    	{
+    		System.out.println("You can't have a function with a denominator of 0");
+    	}
+    	else if(myNumerator < 0 && myDenominator < 0)
+    	{
+    		myNumerator = Math.abs(myNumerator);
+    		myDenominator = Math.abs(myDenominator);
+    	}
+    	
+        int gcd = getGCD(myNumerator, myDenominator);
+        
+        myNumerator = myNumerator / gcd;
+        myDenominator = myDenominator / gcd;
+    }
+    
+    private int getGCD(int x, int y)
+    {
+        if (y == 0)
+            return x;
+        else
+            return getGCD(y, x % y);
+    }    
+}

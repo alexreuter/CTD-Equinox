@@ -1,0 +1,74 @@
+
+public class Main {
+
+	
+	
+	public static void main(String[] args) 
+	{
+		String[] board = new String[9];
+	
+		board[1] = "X";
+		board[3] = "X";
+		board[8] = "X";
+		board[2] = "O";
+		board[4] = "O";
+		board[7] = "O";
+		board[0] = "X";
+		printBoard(board);
+
+	}
+	
+	public static void printRow(String[] board,int startSquare)
+	{
+		System.out.print(board[startSquare]);
+		System.out.print("|");
+		System.out.print(board[startSquare + 1]);
+		System.out.print("|");
+		System.out.print(board[startSquare + 2]);
+		System.out.println("");
+	}
+	
+	public static void printBoard(String[] board)
+	{
+		
+		printRow(board,0);
+		System.out.println("-----");
+		printRow(board,1);
+		System.out.println("-----");
+		printRow(board,2);
+	}
+	
+	 public static int getBoardState(String[] board)
+	 {
+		 //ALL HORIZONTAL WINS
+		 for(int i = 0;i<7;i+=3)
+		 {
+				 if(board[i] == "X" && board[i+1] == "X" && board[i+2] == "X")
+				 {
+					 return 1;
+				 }
+				 
+				 if(board[i] == "O" && board[i+1] == "O" && board[i+2] == "O")
+				 {
+					 return 2;
+				 }
+		 }
+		 
+		//ALL VERTICAL WINS
+		 for(int i = 0;i<3;i++)
+		 {
+				 if(board[i] == "X" && board[i+3] == "X" && board[i+6] == "X")
+				 {
+					 return 1;
+				 }
+				 
+				 if(board[i] == "O" && board[i+3] == "O" && board[i+6] == "O")
+				 {
+					 return 2;
+				 }
+		 }
+		 
+		 //DIAGONALS
+	 }
+
+}

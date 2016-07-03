@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		double x = 0,y = 0;
+		int inCircle = 0;
+		
+		Scanner scan = new Scanner(System.in);
+		long start;
+		System.out.println("Starting number of darts: ");
+		start = scan.nextLong();
+		long end;
+		System.out.println("Ending number of darts: ");
+		end = scan.nextLong();
+		long increment;
+		System.out.println("Increment: ");
+		increment = scan.nextLong();
+		
+		System.out.println("#    Pi");
+		for(int i = 0;i<end;i++)
+		{
+			x = Math.random();
+			y = Math.random();
+			
+			if(i == start || i%increment == 0 && i!=0)
+			{
+				System.out.println(i + " " + ((double)inCircle/i)*4);
+			}
+			
+			
+			if(distanceFormula(x,y)<=0.5)
+			{
+				inCircle++;
+			}
+		}
+		
+		System.out.println("Final approximation: " + ((double)inCircle/end)*4);
+	}
+	
+		
+	
+	public static double distanceFormula(double x,double y)
+	{
+		return Math.sqrt(Math.pow(0.5-x,2) + Math.pow(0.5-y,2));	
+	}
+	
+}

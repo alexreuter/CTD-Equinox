@@ -1,0 +1,72 @@
+
+public class SimpleStack implements Stack 
+{
+	private Object[] myElements = new Object[10];
+	private int nextEmpty = 0;
+	
+	public SimpleStack(Object [] objs)
+	{
+		myElements = objs;
+	}
+	
+	public SimpleStack()
+	{
+	}
+	
+	public boolean isEmpty()
+	{
+		if(myElements[0] == null)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public boolean push(Object obj)
+	{
+		if(myElements[nextEmpty] == null)
+		{
+			myElements[nextEmpty] = obj;
+			nextEmpty++;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public Object pop()
+	{
+		return myElements;
+		
+	}
+	
+	public Object top()
+	{
+		return myElements[furthestLeft+1];
+	}
+	
+	public String toString()
+	{
+		String results = "";
+		
+		for(int i = 0;i<myElements.length;i++)
+		{
+			if(myElements[i] == null)
+			{
+				results = results + "X";
+			}
+			else
+			{
+				results = results + myElements[i].toString();
+			}
+			
+		}
+		return results;
+		
+	}
+}

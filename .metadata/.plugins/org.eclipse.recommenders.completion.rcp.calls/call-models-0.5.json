@@ -1,0 +1,33 @@
+{
+  "/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/rt.jar",
+    "status": "RESOLVED",
+    "error": "No class path info available for \u0027/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/rt.jar\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/Fractions/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/Fractions/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Fractions/src\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/Lab3/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/Lab3/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Lab3/src\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet5/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet5/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Worksheet5/src\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet7/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet7/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Worksheet7/src\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet6/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet6/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Worksheet6/src\u0027. Skipped."
+  }
+}

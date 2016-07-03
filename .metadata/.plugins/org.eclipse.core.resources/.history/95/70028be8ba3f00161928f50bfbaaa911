@@ -1,0 +1,58 @@
+
+public class Main {
+
+	public static void main(String[] args)
+	{
+		
+		Queue test = new simpleQueue();
+		
+		for(int i=0;i<10;i++)
+		{
+			test.enqueue(Integer.toString(i));
+			System.out.println(test);
+		}
+
+		
+		System.out.println("BD" + test);
+		test.dequeue();
+		test.dequeue();
+		test.dequeue();
+		test.dequeue();
+		System.out.println("AD" + test);
+		test.enqueue("*");
+		test.enqueue("*");
+		test.enqueue("*");
+		test.enqueue("*");
+		System.out.println("Full" + test);
+		test.dequeue();
+		test.dequeue();
+		System.out.println("Full -2 " + test);
+	}
+	
+	public static boolean testCase(int operator, SimpleQueue answer)
+	{
+		SimpleQueue result;
+		
+		if(operator == 1)
+		{
+			result = 
+		}
+		else if(operator == 2)
+		{
+			result = new LargeNumber(n1.subtract(n2).toString());
+		}
+		else
+		{
+			result = new LargeNumber("0");
+		}
+			
+		if(result.toString().equals(answer.toString()))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}

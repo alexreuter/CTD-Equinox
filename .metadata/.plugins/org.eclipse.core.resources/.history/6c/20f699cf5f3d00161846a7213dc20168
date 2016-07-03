@@ -1,0 +1,71 @@
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		problemFive();
+	}
+	
+	public static void problemOne()
+	{
+		System.out.println("1. Write a program that prints a random number between 0.0 and 1.0. Run your program multiple times. Does the number printed change each time you run it?");
+		double rand;
+		rand = Math.random();
+		System.out.println(rand);
+	}
+	
+	public static void problemTwo()
+	{
+		System.out.println("2. Write a program that prints 100 random numbers between 0.0 and 1.0.");
+		double rand;
+		for(int i=0;i<100;i++)
+		{
+			rand = Math.random();
+			System.out.println(rand);
+		}
+	}
+	
+	public static void problemThree()
+	{
+		System.out.println("3. Write a program that prints 100 random numbers between 0.0 and 19.0.");
+		double rand;
+		for(int i=0;i<100;i++)
+		{
+			rand = Math.random()*19;
+			System.out.println(rand);
+		}
+	}
+	
+	public static void problemFour()
+	{
+		System.out.println("4. Write a program that prints 100 random integers between 0 and 18 inclusive.");
+		double rand;
+		for(int i=0;i<100;i++)
+		{
+			rand = (int)(Math.random()*19);
+			System.out.println(rand);
+		}
+	}
+	
+	public static void problemFive()
+	{
+		System.out.println("5. Write a program that prints 100 random integers between 1 and 19 inclusive.");
+		double rand;
+		for(int i=0;i<100;i++)
+		{
+			rand = (int)((Math.random())*20);
+			System.out.println(rand);
+		}
+	}
+	
+	public static void problemSix()
+	{
+		System.out.println("6. Write a program that prints 100 random integers between 1 and 2 inclusive");
+		double rand;
+		for(int i=0;i<100;i++)
+		{
+			rand = (int)(1+(Math.random())*2);
+			System.out.println(rand);
+		}
+	}
+}

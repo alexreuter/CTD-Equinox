@@ -1,0 +1,282 @@
+import java.util.Scanner;
+
+
+public class Main {
+	//FIX USABILITY
+	//PLAYERSYMBOL IS REVERSED
+	
+	public static final String[] playerSymbol = { "O", "X" };
+	public static final String[] playerType = { "Human", "Computer" };
+	
+	
+	public static void main(String[] args) 
+	{
+		String[] board = new String[9];
+		int player = 1;
+		
+		for(int i=0;i<9;i++)
+		{
+			board[i] = Integer.toString(i);
+		}
+		
+		printBoard(board);
+		System.out.println("");
+		
+		for(int i=0;i<9;i++)
+		{
+			board[i] = " ";
+		}
+		
+		
+		while(getBoardState(board) != 3 && getBoardState(board) != 2 && getBoardState(board) != 1)
+		{
+			printBoard(board);
+			int move = getMove(board,player);
+			
+			while(!isLegalMove(board,move))
+			{
+				System.out.println("Your move is illegal");
+				move = getMove(board,player);
+			}
+			board[move] = playerSymbol[player];
+			player = switchPlayer(player);
+		}
+		printBoard(board);
+		if(getBoardState(board) == 1)
+		{
+			System.out.println("The Computer won!");
+		}
+		else
+		{
+			System.out.println("The Human won!");
+		}
+	}
+	
+	public static void printRow(String[] board,int startSquare)
+	{
+		System.out.print(board[startSquare]);
+		System.out.print("|");
+		System.out.print(board[startSquare + 1]);
+		System.out.print("|");
+		System.out.print(board[startSquare + 2]);
+		System.out.println("");
+	}
+	
+	public static void printBoard(String[] board)
+	{
+		
+		printRow(board,0);
+		System.out.println("-----");
+		printRow(board,3);
+		System.out.println("-----");
+		printRow(board,6);
+		System.out.println("");
+		System.out.println("-------------");
+	}
+	
+	 public static int getBoardState(String[] board)
+	 {
+		 //ALL HORIZONTAL WINS
+		 for(int i = 0;i<7;i+=3)
+		 {
+				 if(board[i].equals("X") && board[i+1].equals("X") && board[i+2].equals("X"))
+				 {
+					 return 1;
+				 }
+				 
+				 if(board[i].equals("O") && board[i+1].equals("O") && board[i+2].equals("O"))
+				 {
+					 return 2;
+				 }
+		 }
+		 
+		//ALL VERTICAL WINS
+		 for(int i = 0;i<3;i++)
+		 {
+				 if(board[i].equals("X") && board[i+3].equals("X") && board[i+6].equals("X"))
+				 {
+					 return 1;
+				 }
+				 
+				 if(board[i].equals("O") && board[i+3].equals("O") && board[i+6].equals("O"))
+				 {
+					 return 2;
+				 }
+		 }
+		 
+		 //DIAGONALS
+		 if(board[0].equals("X") && board[4].equals("X") && board[8].equals("X"))
+		 {
+			 return 1;
+		 }
+		 
+		 if(board[0].equals("O") && board[4].equals("O") && board[8].equals("O"))
+		 {
+			 return 2;
+		 }
+		 
+		 if(board[2].equals("X") && board[4].equals("X") && board[6].equals("X"))
+		 {
+			 return 1;
+		 }
+		 
+		 if(board[2].equals("O") && board[4].equals("O") && board[6].equals("O"))
+		 {
+			 return 2;
+		 }
+		 
+		 for(int i=0;i<9;i++)
+		 {
+			 if(board[i].equals(" ") || board[i].equals(null))
+			 {
+				 return 4;
+			 }
+		 }
+		 return 3;
+	 }
+	 
+	 public static int getHumanMove()
+	 {
+		 System.out.println(playerType[0] + " what is your move?");
+		 Scanner scan = new Scanner(System.in);
+	     return scan.nextInt();
+	 }
+	 
+	 public static int getComputerMove(String[] board,int player)
+	 {
+		 if(canWin(board,player) != -1)
+		 {
+			 return canWin(board,player);
+		 }
+		 else if(canWin(board,player) != -1)
+		 {
+			 
+		 }
+		return (int)(Math.random()*8);
+	 }
+	 
+	 public static int getMove(String[] board, int player)
+	 {
+		 if(player == 1)
+		 {
+			 return getHumanMove();
+		 }
+		 else
+		 {
+			 return getComputerMove();
+		 }
+	 }
+	 
+	 public static boolean isLegalMove(String[] board, int move)
+	 {
+		 if(move>8||move<0)
+		 {
+			 return false;
+		 }
+		 if(board[move] != " ")
+		 {
+			 return false;
+		 }
+		 else
+		 {
+			 return true;
+		 }
+	 }
+	 
+	 public static int switchPlayer(int player)
+	 {
+		 if(player == 0)
+		 {
+			 player++;
+		 }
+		 else
+		 {
+			 player--;
+		 }
+		 return player;
+	 }
+	 
+	 public static int canWin(String [] board,int player)
+	 {
+		 String myValue;
+		 String otherValue;
+		 
+		 if (playerSymbol[player].equals("X"))
+		 {
+			 myValue = "X"; // The computer is X
+		 	otherValue = "O"; // The other player is O
+		 }
+		 else
+		 {
+			 myValue = "O"; // The computer is O
+			 otherValue = "X"; // The other player is X
+		 }
+		 
+		 //HORIZONTAL CHECKS
+		 for(int i = 0;i<7;i+=3)
+		 {
+			 if(board[i].equals(myValue) && board[i+1].equals(myValue))
+			 {
+				 return i+2;
+			 }
+			 if(board[i+1].equals(myValue) && board[i+2].equals(myValue))
+			 {
+				 return i;
+			 }
+			 if(board[i].equals(myValue) && board[i+2].equals(myValue))
+			 {
+				 return i+1;
+			 }
+		 }
+		 
+		 //ALL VERTICAL CASES
+		 for(int i = 0;i<3;i++)
+		 {
+			 if(board[i].equals(myValue) && board[i+3].equals(myValue))
+			 {
+				 return i+6;
+			 }
+			 if(board[i].equals(myValue) && board[i+6].equals(myValue))
+			 {
+				 return i+9;
+			 }
+			 if(board[i+3].equals(myValue) && board[i+6].equals(myValue))
+			 {
+				 return i;
+			 }
+		 }
+		 
+		 //LEFT TO RIGHT DIAGONAL
+		 
+		 if(board[0].equals(myValue) && board[4].equals(myValue))
+		 {
+			 return 8;
+		 }
+		 if(board[0].equals(myValue) && board[8].equals(myValue))
+		 {
+			 return 4;
+		 }
+		 if(board[4].equals(myValue) && board[8].equals(myValue))
+		 {
+			 return 0;
+		 }
+		 
+		 //RIGHT TO LEFT DIAGONAL
+		 
+		 if(board[2].equals(myValue) && board[4].equals(myValue))
+		 {
+			 return 6;
+		 }
+		 if(board[4].equals(myValue) && board[6].equals(myValue))
+		 {
+			 return 2;
+		 }
+		 if(board[6].equals(myValue) && board[2].equals(myValue))
+		 {
+			 return 4;
+		 }
+		 
+		 //This means the user cannot win
+		return -1;
+	 }
+}

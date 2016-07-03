@@ -1,0 +1,17 @@
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		Stack test = new SimpleStack();
+		
+		test.toString();
+		System.out.println(test.isEmpty());
+		
+		Integer k;
+		for (k.intValue(); k.intValue() < 10 ; k = k.intValue() + 1)
+			test.push(k);
+
+	}
+
+}

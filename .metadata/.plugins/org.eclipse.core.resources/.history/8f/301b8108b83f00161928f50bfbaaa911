@@ -1,0 +1,109 @@
+
+public class simpleQueue implements Queue
+{
+	private Object[] myArray = new Object[10];
+	private int toEnqueue = 0;
+	public int toDequeue = 0;
+	
+	public simpleQueue(Object [] arr)
+	{
+		myArray = arr;
+	}
+	
+	public simpleQueue()
+	{
+		//Do nothing
+	}
+	
+	public String toString()
+	{
+		String results = "";
+		
+		for(int i = 0;i<myArray.length;i++)
+		{
+			if(myArray[i] == null)
+			{
+				results = results + "X";
+			}
+			else
+			{
+				results = results + myArray[i].toString();
+			}
+			
+		}
+		return results;
+		
+	}
+
+	public boolean isEmpty() {
+		if(myArray[toDequeue] == null)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public boolean enqueue(Object element) {
+		//If there is an empty spot
+		if(myArray[toEnqueue] == null)
+		{
+			myArray[toEnqueue] = element;
+			toEnqueue = toEnqueue + 1;
+			toEnqueue = fixValue(toEnqueue);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+			
+	}
+
+	public Object dequeue() 
+	{
+//		if(myArray[toDequeue-1] == null)
+//		{
+//			System.out.println("Queue is empty");
+//			return null;
+//		}
+//		else
+//		{
+//			
+//			Object placeholder = myArray[toDequeue];
+//			//If you need to dequeue something from teh beginning
+//			if(toDequeue - 1<0)
+//			{
+//				toDequeue = fixValue(toDequeue-1);
+//				
+//				myArray[toDequeue] = null;
+//			}
+//			else
+//			{
+//				System.out.println("Making null:" + myArray[toDequeue]);
+//				//toDequeue = toDequeue
+//			}
+//			return placeholder;
+//		}
+		System.out.println(toDequeue);
+	}
+
+	public Object front() {
+		return myArray[toDequeue];
+	}
+	
+	private int fixValue(int x)
+	{
+		if(x > myArray.length-1)
+		{
+			return (x%myArray.length+1);
+		}
+		else if(x<0)
+		{
+			return x+10;
+		}
+		return x;
+	}
+}

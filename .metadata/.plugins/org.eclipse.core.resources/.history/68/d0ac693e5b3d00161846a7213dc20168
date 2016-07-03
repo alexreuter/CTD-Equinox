@@ -1,0 +1,238 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		problemNine();
+
+	}
+	
+
+
+
+	public static void problemOne()
+	{
+		Scanner scan = new Scanner(System.in);
+		int num;
+		System.out.print("Enter a number: ");
+		num = scan.nextInt();
+		System.out.println("Here is your number: " + num);
+	}
+	
+	public static void problemTwo()
+	{
+		Scanner scan = new Scanner(System.in);
+		int n1,n2;
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		System.out.println("Here is your first number: " +n1);
+		System.out.println("Here is your second number: " + n2);
+	}
+	
+	public static void problemThree()
+	{
+		Scanner scan = new Scanner(System.in);
+		int n1,n2;
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		System.out.println("Here is the sum of those numbers: " + Integer.toString(n1+n2));
+	}
+	
+	public static void problemFour()
+	{
+		int n1,n2;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		double average = (n1+n2)/2.0;
+		System.out.println("Here is the average of those numbers: " + average);
+	}
+	
+	public static void problemFive()
+	{
+		int n1,n2,z;
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		System.out.print("Enter another number again: ");
+		z = scan.nextInt();
+		
+		System.out.println("Here is the sum of those numbers: " + Integer.toString(n1+n2+z));
+	}
+	
+	public static void problemSix()
+	{
+		int n1,n2,z;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		System.out.print("Enter another number again: ");
+		z = scan.nextInt();
+		double average = (n1+n2+z)/3.0;
+		System.out.println("Here is the average of those numbers: " + average);
+	}
+	
+	public static void problemSeven()
+	{
+		int n1,n2;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		
+		if(n1>n2)
+		{
+			System.out.println(n1 + " is bigger!");
+		}
+		else if (n1<n2)
+		{
+			System.out.println(n2 + " is bigger!");
+		}
+		else if (n1==n2)
+		{
+			System.out.println("They are equal!");
+		}
+		else
+		{
+			System.out.println("That isn't a number!");
+		}
+	}
+	
+	public static void problemEight()
+	{
+		int n1,n2;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		
+		if(n1>n2)
+		{
+			System.out.println(n2 + " , " +n1);
+		}
+		else if (n1<n2)
+		{
+			System.out.println(n1 + " , " + n2);
+		}
+		else if (n1==n2)
+		{
+			System.out.println("They are equal!");
+		}
+		else
+		{
+			System.out.println("That isn't a number!");
+		}
+	}
+	
+	public static void problemNine()
+	{
+		int n1,n2,n3;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		System.out.print("Enter another number again: ");
+		n3 = scan.nextInt();
+
+		
+		if(n1 == n2 && n2== n3)
+		{
+			System.out.println("They are all equal");
+		}
+		else if(n1>=n2)
+		{
+			if(n1>n3)
+			{
+				System.out.println(n1);
+			}
+			else
+			{
+				System.out.println(n3);
+			}
+		}
+		else if(n2>n1)
+		{
+			if(n2>n3)
+			{
+				System.out.println(n2);
+			}
+			else
+			{
+				System.out.println(n3);
+			}
+		}
+		else if(n2>n3)
+		{
+			if(n2>n1)
+			{
+				System.out.println(n3);
+			}
+			else
+			{
+				System.out.println(n1);
+			}
+		}
+		else if(n3>n2)
+		{
+			if(n3>n1)
+			{
+				System.out.println(n3);
+			}
+			else
+			{
+				System.out.println(n1);
+			}
+		}
+		else
+		{
+			System.out.println("You inputted a non number");
+		}
+		
+		problemNine();
+	}
+	
+	public static void problemTen()
+	{
+		int n1,n2,n3;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		n1 = scan.nextInt();
+		System.out.print("Enter another number: ");
+		n2  =scan.nextInt();
+		System.out.print("Enter another number again: ");
+		n3 = scan.nextInt();
+		
+		if(n1>n2&&n2>n3)
+		{
+			System.out.println("Smallest to biggest: "+ n1+n2+n3);
+		}
+	}
+
+}

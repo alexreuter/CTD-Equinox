@@ -1,0 +1,27 @@
+
+public class Main {
+
+	public static void main(String[] args)
+	{
+		
+		Queue test = new simpleQueue();
+		
+		for(int i=0;i<10;i++)
+		{
+			test.enqueue(Integer.toString(i));
+			System.out.println(test);
+		}
+
+		
+		System.out.println("BD" + test);
+		test.dequeue();
+		
+		test.dequeue();
+		test.dequeue();
+		test.dequeue();
+		System.out.println("AD" + test);
+		
+	
+	}
+
+}

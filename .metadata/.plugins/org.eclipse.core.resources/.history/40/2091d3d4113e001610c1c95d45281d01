@@ -1,0 +1,138 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		problem8();
+	}
+	
+	public static void problem1()
+	{
+		double [] numbers = new double[100] ;
+		double average = 0;
+		int overAverage = 0;
+		
+		for(int i = 0;i<100;i++)
+		{
+			numbers[i] = Math.random();
+		}
+		
+		for(int i = 0;i<100;i++)
+		{
+			average += numbers[i];
+		}
+		
+		average = average/100;
+		
+		System.out.println("Average of numbers: " + average);
+		
+		for(int i = 0;i<100;i++)
+		{
+			if(numbers[i] > average)
+			{
+				overAverage ++;
+			}
+		}
+		
+		System.out.println(overAverage + " numbers are over the average");	
+	}
+	
+	public static void problem2()
+	{
+		int die = (int)((Math.random()*6)+1);
+		System.out.println("You rolled: " + die);
+	}
+	
+	public static void problem4()
+	{
+		int die;
+		int [] count = new int[6];
+		
+		System.out.println("Rolling 1000 dies...");
+		
+		for(int i = 0;i<1000;i++)
+		{
+			die = (int)((Math.random()*6)+1);
+			count[die-1] ++;
+		}
+		
+		for(int i = 1;i<7;i++)
+		{
+			System.out.println("A " + i + " was rolled " + count[i-1] + " times (" + ((double)count[i-1]/1000)*100 + "%).");
+		}
+	}
+	
+	public static void problem3()
+	{
+		int die;
+		for(int i = 0;i<1000;i++)
+		{
+			die = (int)((Math.random()*6)+1);
+			System.out.println(die);
+		}
+	}
+	
+	public static void problem5()
+	{
+		int times = 0;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("How many dice do you want to roll?");
+		times = scan.nextInt();
+		int die;
+		int [] count = new int[6];
+		
+		System.out.println("Rolling "+times+" dice...");
+		
+		for(int i = 0;i<times;i++)
+		{
+			die = (int)((Math.random()*6)+1);
+			count[die-1] ++;
+		}
+		
+		for(int i = 1;i<7;i++)
+		{
+			System.out.println("A " + i + " was rolled " + count[i-1] + " times (" + ((double)count[i-1]/1000)*100 + "%).");
+		}
+	}
+	
+	public static void problem6()
+	{
+		int die1 = (int)((Math.random()*6)+1);
+		int die2 = (int)((Math.random()*6)+1);
+		int result = die1+die2;
+		System.out.println("The sum of the dice is: " + result);
+	}
+	
+	public static void problem7()
+	{		
+		for(int i = 0;i<1000;i++)
+		{
+			int dice1 = (int)((Math.random()*6)+1);
+			int dice2 = (int)((Math.random()*6)+1);
+			
+			int result = dice1+dice2;
+			System.out.println(result);
+		}
+	}
+	
+	public static void problem8()
+	{
+		int[]count = new int[11];
+		
+		for(int i = 0;i<1000;i++)
+		{
+			int dice1 = (int)((Math.random()*6)+1);
+			int dice2 = (int)((Math.random()*6)+1);
+			
+			int result = dice1+dice2;
+			count[result-2] ++;
+		}
+		
+		for(int i = 1;i<13;i++)
+		{
+			System.out.println("A " + i + " was rolled " + count[i-1] + " times (" + ((double)count[i-1]/1000)*100 + "%).");
+		}
+	}
+	
+	
+}

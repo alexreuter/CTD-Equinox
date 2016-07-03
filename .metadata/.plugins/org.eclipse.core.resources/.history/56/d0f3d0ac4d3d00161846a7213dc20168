@@ -1,0 +1,178 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		problemSeven();
+
+	}
+	
+
+
+
+	public static void problemOne()
+	{
+		Scanner scan = new Scanner(System.in);
+		int num;
+		System.out.print("Enter a number: ");
+		num = scan.nextInt();
+		System.out.println("Here is your number: " + num);
+	}
+	
+	public static void problemTwo()
+	{
+		Scanner scan = new Scanner(System.in);
+		int x,y;
+		System.out.print("Enter a number: ");
+		x = scan.nextInt();
+		System.out.print("Enter another number: ");
+		y = scan.nextInt();
+		System.out.println("Here is your first number: " + x);
+		System.out.println("Here is your second number: " + y);
+	}
+	
+	public static void problemThree()
+	{
+		Scanner scan = new Scanner(System.in);
+		int x,y;
+		System.out.print("Enter a number: ");
+		x = scan.nextInt();
+		System.out.print("Enter another number: ");
+		y = scan.nextInt();
+		System.out.println("Here is the sum of those numbers: " + Integer.toString(x+y));
+	}
+	
+	public static void problemFour()
+	{
+		int x,y;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		x = scan.nextInt();
+		System.out.print("Enter another number: ");
+		y = scan.nextInt();
+		double average = (x+y)/2.0;
+		System.out.println("Here is the average of those numbers: " + average);
+	}
+	
+	public static void problemFive()
+	{
+		int x,y,z;
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		x = scan.nextInt();
+		System.out.print("Enter another number: ");
+		y = scan.nextInt();
+		System.out.print("Enter another number again: ");
+		z = scan.nextInt();
+		
+		System.out.println("Here is the sum of those numbers: " + Integer.toString(x+y+z));
+	}
+	
+	public static void problemSix()
+	{
+		int x,y,z;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		x = scan.nextInt();
+		System.out.print("Enter another number: ");
+		y = scan.nextInt();
+		System.out.print("Enter another number again: ");
+		z = scan.nextInt();
+		double average = (x+y+z)/3.0;
+		System.out.println("Here is the average of those numbers: " + average);
+	}
+	
+	public static void problemSeven()
+	{
+		int x,y;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		x = scan.nextInt();
+		System.out.print("Enter another number: ");
+		y = scan.nextInt();
+		
+		if(x>y)
+		{
+			System.out.println(x + " is bigger!");
+		}
+		else if (x<y)
+		{
+			System.out.println(y + " is bigger!");
+		}
+		else if (x==y)
+		{
+			System.out.println("They are equal!");
+		}
+		else
+		{
+			System.out.println("That isn't a number!");
+		}
+	}
+	
+	public static void problemEight()
+	{
+		int x,y;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		x = scan.nextInt();
+		System.out.print("Enter another number: ");
+		y = scan.nextInt();
+		
+		if(x>y)
+		{
+			System.out.println(y + " , " + x);
+		}
+		else if (x<y)
+		{
+			System.out.println(x + " , " + y);
+		}
+		else if (x==y)
+		{
+			System.out.println("They are equal!");
+		}
+		else
+		{
+			System.out.println("That isn't a number!");
+		}
+	}
+	
+	public static void problemNine()
+	{
+		int x,y;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter a number: ");
+		x = scan.nextInt();
+		System.out.print("Enter another number: ");
+		y = scan.nextInt();
+		
+		if(x>y)
+		{
+			System.out.println(x + " is bigger!");
+		}
+		else if (x<y)
+		{
+			System.out.println(y + " is bigger!");
+		}
+		else if (x==y)
+		{
+			System.out.println("They are equal!");
+		}
+		else
+		{
+			System.out.println("That isn't a number!");
+		}
+	}
+
+}

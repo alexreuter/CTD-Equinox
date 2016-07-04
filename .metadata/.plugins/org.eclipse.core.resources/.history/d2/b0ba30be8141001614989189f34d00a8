@@ -53,6 +53,7 @@ public class Quack implements Stack,Queue
 			else
 			{
 				//This should never happen it should just make debugging easier.
+				System.out.println("Tried to dequeue to empty index");
 				return null;
 			}
 		}
@@ -65,20 +66,22 @@ public class Quack implements Stack,Queue
 	//This is for a queue
 	public Object front() 
 	{
+		//System.out.println(getRidofNullPointers(frontIndex-1));
 		return myArray[getRidofNullPointers(frontIndex-1)];
 	}
 
+	//HOW DO I FIGURE THIS OUT
 	public boolean isEmpty() 
 	{
-		boolean foundFull = true;
+		boolean foundEmpty = false;
 		for(int i = 0;i<myArray.length;i++)
 		{
-			if(myArray[i] != null)
+			if(myArray[i] == null)
 			{
-				foundFull = false;
+				foundEmpty = true;
 			}
 		}
-		return foundFull;
+		return foundEmpty;
 	}
 
 	public boolean push(Object element) 
@@ -88,17 +91,25 @@ public class Quack implements Stack,Queue
 	}
 
 	public Object dequeue() {
-		//If the pop space is full
-		if(myArray[getRidofNullPointers(frontIndex-1)] != null)
+		if(!isFull())
 		{
-			Object placeholder = myArray[getRidofNullPointers(frontIndex-1)];
-			myArray[getRidofNullPointers(frontIndex-1)] = null;
-			frontIndex = getRidofNullPointers(frontIndex-1);
-			return placeholder;
+			//If the pop space is full
+			if(myArray[getRidofNullPointers(frontIndex-1)] != null)
+			{
+				Object placeholder = myArray[getRidofNullPointers(frontIndex-1)];
+				myArray[getRidofNullPointers(frontIndex-1)] = null;
+				frontIndex = getRidofNullPointers(frontIndex-1);
+				return placeholder;
+			}
+			else
+			{
+				//This should never happen it should just make debugging easier.
+				System.out.println("Tried to dequeue to empty index");
+				return null;
+			}
 		}
 		else
 		{
-			//This should never happen it should just make debugging easier.
 			return null;
 		}
 	}

@@ -70,15 +70,15 @@ public class Quack implements Stack,Queue
 
 	public boolean isEmpty() 
 	{
-		boolean foundFull = true;
+		boolean foundEmpty = false;
 		for(int i = 0;i<myArray.length;i++)
 		{
-			if(myArray[i] != null)
+			if(myArray[i] == null)
 			{
-				foundFull = false;
+				foundEmpty = true;
 			}
 		}
-		return foundFull;
+		return foundEmpty;
 	}
 
 	public boolean push(Object element) 

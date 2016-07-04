@@ -35,8 +35,5 @@ public class Main
 		System.out.println("Pop " + bob.pop());
 		System.out.println("Dequeue " + bob.dequeue());
 		System.out.println("IsEmpty " + bob.isEmpty());
-		bob.push("Three");
-		System.out.println(bob);
-		System.out.println("IsEmpty " + bob.isEmpty());
 	}
 }

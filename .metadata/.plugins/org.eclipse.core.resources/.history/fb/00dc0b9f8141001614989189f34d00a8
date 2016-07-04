@@ -1,0 +1,27 @@
+
+public class Main 
+{
+	public static void main(String args[])
+	{
+		Quack bob = new Quack();
+		((Quack) bob).enqueue("1");
+		((Quack) bob).enqueue("2");
+		((Quack) bob).enqueue("3");
+		((Quack) bob).enqueue("4");
+		((Quack) bob).enqueue("5");
+		((Quack) bob).enqueue("6");
+		((Quack) bob).enqueue("7");
+		((Quack) bob).enqueue("8");
+		((Quack) bob).enqueue("9");
+		((Quack) bob).enqueue("X");
+		System.out.println(bob);
+		System.out.println(bob.frontIndex);
+		System.out.println(bob.endIndex);
+		System.out.println(bob.front());
+		System.out.println("Front index " + bob.frontIndex);
+		System.out.println("D " + ((Quack) bob).dequeue());
+		System.out.println(bob);
+		System.out.println("Pop " + bob.pop());
+		System.out.println(bob);
+	}
+}

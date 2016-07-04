@@ -1,8 +1,8 @@
 
 public class LargeNumber 
 {
-	//Make more negative numbers work
-	//After testing make remove zeros private
+	//Make if with isNegative for plus and minus
+	//Multiply digit is working
 	
 	private String myNumber;
 	
@@ -14,6 +14,40 @@ public class LargeNumber
 	public String toString()
 	{
 		return myNumber;
+	}
+	
+	public static LargeNumber multiplyDigit(LargeNumber other, int digit)
+	{
+		int carry = 0;
+		LargeNumber result = new LargeNumber("");
+		
+		for(int i=0;i<other.toString().length();i++)
+		{
+			int total = 0;
+			int digit1 = Integer.parseInt(other.toString().substring(other.toString().length()-(i+1), other.toString().length()-i));
+			total = (digit1 * digit) + carry;
+			System.out.println(total);
+			
+			if(total>9)
+			{
+				carry = total/10;
+				System.out.println("Carrying" + carry);
+				total = total % 10;
+				System.out.println("tot" + total);
+			}
+			
+			if(i == other.toString().length()-1)
+			{
+				result.myNumber = carry + "" + total + result.myNumber;
+			}
+			else
+			{
+				result.myNumber = total + result.myNumber;
+			}	
+			
+			System.out.println(result.myNumber);
+		}
+		return result;
 	}
 	
 	public LargeNumber plus(LargeNumber other)
@@ -208,8 +242,14 @@ public class LargeNumber
 		//This stores where the zeros end
 		int startIndex = 0;
 		
+		//This makes sure the function doesn't delete minus sides
+		if(number.toString().substring(0,1).equals("-"))
+		{
+			startIndex = 1;
+		}
+		
 		//This is -2 so that is doesn't delete the last zero if the last number is a zero
-		for(int i = 0;i<number.toString().length()-2;i++)
+		for(int i = 1;i<number.toString().length()-2;i++)
 		{
 			if(number.toString().substring(i, i+1).equals("0"))
 			{

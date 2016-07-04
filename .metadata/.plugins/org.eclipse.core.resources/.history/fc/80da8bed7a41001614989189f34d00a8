@@ -1,0 +1,141 @@
+
+public class Quack implements Stack,Queue
+{	
+	//front is where one pops and enqueues
+	//back is where one dequeses
+	
+	
+	private Object[] myArray = new Object[10];
+	public int frontIndex = 0;
+	public int endIndex = 0;
+	
+	public Quack(Object[] elements)
+	{
+		myArray = elements;
+	}
+	
+	public Quack()
+	{
+		//Do nothing
+	}
+	
+	public boolean enqueue(Object element) {
+		if(!isFull())
+		{
+			//If the enqueue space is open
+			if(myArray[getRidofNullPointers(endIndex-1)] == null)
+			{
+				endIndex = getRidofNullPointers(endIndex-1);
+				myArray[endIndex] = element;
+				return true;
+			}
+			else
+			{
+				//This should never happen it should just make debugging easier.
+				System.out.println("Tried to enqueue to full index, isFull failed");
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public Object dequeue() {
+		if(!isFull())
+		{
+			//If the dequeue space is full
+			if(myArray[getRidofNullPointers(frontIndex)] != null)
+			{
+				Object placeholder = myArray[getRidofNullPointers(frontIndex)];
+				myArray[getRidofNullPointers(frontIndex)] = null;
+				endIndex = getRidofNullPointers(frontIndex+1);
+				return placeholder;
+			}
+			else
+			{
+				//This should never happen it should just make debugging easier.
+				System.out.println("Tried to dequeue to empty index");
+				return null;
+			}
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	//This is for a queue
+	public Object front() 
+	{
+		return myArray[endIndex];
+	}
+
+	//HOW DO I FIGURE THIS OUT
+	public boolean isEmpty() 
+	{
+		return false;
+	}
+
+	public boolean push(Object element) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Object pop() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	//This is for a stack
+	public Object top() 
+	{
+		return myArray[frontIndex];
+	}
+	
+	public String toString()
+	{
+		String results = "";
+		
+		for(int i = 0;i<myArray.length;i++)
+		{
+			if(myArray[i] == null)
+			{
+				results = results + "X";
+			}
+			else
+			{
+				results = results + myArray[i].toString();
+			}
+		}
+		return results;
+	}
+	
+	private int getRidofNullPointers(int x)
+	{
+		if(x>myArray.length-1)
+		{
+			x %= 10;
+		}
+		else if(x<0)
+		{
+			x += myArray.length;
+		}
+		
+		return x;
+	}
+	
+	private boolean isFull()
+	{
+		for(int i = 0;i<myArray.length;i++)
+		{
+			if(myArray[i] == null)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
+}

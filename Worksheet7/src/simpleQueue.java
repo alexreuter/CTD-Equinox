@@ -32,7 +32,6 @@ public class simpleQueue implements Queue
 			
 		}
 		return results;
-		
 	}
 
 	public boolean isEmpty() {

@@ -1,0 +1,63 @@
+
+public class Quack implements Stack,Queue
+{
+	private Object[] myArray = new Object[10];
+	private int beginningIndex = 0;
+	private int endIndex = 0;
+	
+	public boolean enqueue(Object element) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Object dequeue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object front() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean push(Object element) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Object pop() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object top() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public String toString()
+	{
+		String results = "";
+		
+		for(int i = 0;i<myArray.length;i++)
+		{
+			if(myArray[i] == null)
+			{
+				results = results + "X";
+			}
+			else
+			{
+				results = results + myArray[i].toString();
+			}
+			
+		}
+		return results;
+		
+	}
+
+}

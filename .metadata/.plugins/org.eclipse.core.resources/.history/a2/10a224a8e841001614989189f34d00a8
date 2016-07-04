@@ -8,13 +8,10 @@ public class LargeNumber
 	
 	public LargeNumber(String number)
 	{
-//		LargeNumber placeholder = new LargeNumber("");
-//		placeholder.myNumber = number;
-		myNumber = number;
-		this.myNumber = cleanZeros(this).toString();
+		LargeNumber placeholder = new LargeNumber("");
+		placeholder.myNumber = number;
+		myNumber = LargeNumber.cleanZeros(placeholder).toString();
 	}
-	
-	public LargeNumber(){}
 	
 	public String toString()
 	{
@@ -85,17 +82,11 @@ public class LargeNumber
 
 		LargeNumber n1 = new LargeNumber("");
 		LargeNumber n2 = new LargeNumber("");
-		LargeNumber results = new LargeNumber("");
 		
-		for(int i = 0;i<levels.length-2;i++)
+		for(int i = 0;i<levels.length;i++)
 		{
-			n1.myNumber = levels[i];
-			n2.myNumber = levels[i+1];
 			
-			results.myNumber =  results.plus(n1.plus(n2)).toString();
 		}
-		
-		return results;
 		
 	}
 	

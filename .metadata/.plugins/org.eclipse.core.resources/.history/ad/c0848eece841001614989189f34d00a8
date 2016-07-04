@@ -8,13 +8,10 @@ public class LargeNumber
 	
 	public LargeNumber(String number)
 	{
-//		LargeNumber placeholder = new LargeNumber("");
-//		placeholder.myNumber = number;
-		myNumber = number;
-		this.myNumber = cleanZeros(this).toString();
+		LargeNumber placeholder = new LargeNumber("");
+		placeholder.myNumber = number;
+		myNumber = LargeNumber.cleanZeros(placeholder).toString();
 	}
-	
-	public LargeNumber(){}
 	
 	public String toString()
 	{
@@ -94,8 +91,6 @@ public class LargeNumber
 			
 			results.myNumber =  results.plus(n1.plus(n2)).toString();
 		}
-		
-		return results;
 		
 	}
 	

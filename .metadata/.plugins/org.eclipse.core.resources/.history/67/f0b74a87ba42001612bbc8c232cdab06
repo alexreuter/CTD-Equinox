@@ -1,0 +1,13 @@
+import java.awt.Color;
+
+
+public class PulsingBall extends Ball
+{
+	private boolean myIsShrinking;
+	
+	public PulsingBall(double x, double y, double size, Color c, double xVel, double yVel, Box box) 
+	{
+		super(x, y, size, c, xVel, yVel, box);
+	}
+
+}

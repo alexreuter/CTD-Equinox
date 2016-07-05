@@ -1,0 +1,44 @@
+import acm.program.*;
+import acm.graphics.*;
+
+import java.awt.Color;
+
+public class Ball extends GOval
+{
+    private double myXVelocity;
+    private double myYVelocity;
+    private Box myBox;
+    private double mySize;
+    
+    public Ball(double x, double y, double size, Color c, double xVel, double yVel, Box box)
+    {
+        super(x, y, size, size);
+        mySize = size;
+        
+        setColor(c);
+        setFillColor(c);
+        setFilled(true);
+        
+        myXVelocity = xVel;
+        myYVelocity = yVel;
+        myBox = box;
+    }
+    
+    public void move()
+    {
+        if (getX() <= 0)
+            myXVelocity = -myXVelocity;
+        
+        if (getX()+size/2 >= myBox.getWidth())
+            myXVelocity = -myXVelocity;
+        
+        if (getY() <= 0)
+            myYVelocity = -myYVelocity;
+        
+        if (getY() >= myBox.getHeight())
+            myYVelocity = -myYVelocity;
+        
+        
+        super.move(myXVelocity, myYVelocity);
+    }
+}

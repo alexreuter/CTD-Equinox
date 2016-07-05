@@ -1,0 +1,54 @@
+import acm.program.*;
+import acm.graphics.*;
+
+import java.awt.Color;
+
+public class Box extends GraphicsProgram
+{
+    private PulsingBall[] myPulsingBall;
+    private Paddle top;
+    private Paddle bottom;
+    private Paddle left;
+    private Paddle right;
+    
+    public void init()
+    {
+        myPulsingBall = new PulsingBall [24];
+        
+        double scalableWidth = this.getWidth()/4;
+        double scalableHeight = this.getHeight()/10;
+        
+        Paddle top = new Paddle(0,	0,	scalableWidth,	scalableHeight,	Color.RED);
+        Paddle bottom = new Paddle(0,	this.getHeight()-scalableHeight,	scalableWidth,	scalableHeight,	Color.RED);
+        Paddle left = new Paddle(0,	0,	5,	50,	Color.RED);
+        Paddle right = new Paddle(this.getWidth()-5,	0,	5,	50,	Color.RED);
+        
+        add(top);
+        add(bottom);
+        add(left);
+        add(right);
+        
+        for (int k = 0 ; k < 24 ; k++)
+        {
+            myPulsingBall[k] = new PulsingBall(getWidth() * Math.random(), 
+                                 getHeight() * Math.random(), 
+                                 (Math.random()*9) + 2, 
+                                 new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random())), 
+                                 10 * Math.random() - 5, 
+                                 10 * Math.random() - 5, 
+                                 this);
+            add(myPulsingBall[k]);
+        }
+    }
+    
+    public void run()
+    {
+        while (true)
+        {
+            for (int k = 0 ; k < 24 ; k++)
+                myPulsingBall[k].move();
+
+            pause(100);
+        }
+    }
+}

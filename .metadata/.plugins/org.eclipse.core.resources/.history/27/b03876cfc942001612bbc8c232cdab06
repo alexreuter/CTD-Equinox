@@ -1,0 +1,17 @@
+import java.awt.Color;
+
+import acm.graphics.GRect;
+
+public class RotatePaddle extends GRect
+{
+	public RotatePaddle(double x, double y, double width, double height, Color c)
+	{
+		super(x,y,width,height);
+		
+		setColor(c);
+        setFillColor(c);
+        setFilled(true);
+        
+	}
+	
+}

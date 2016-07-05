@@ -1,0 +1,6 @@
+import acm.graphics.GRect;
+
+public class RotatePaddle extends GRect
+{
+
+}

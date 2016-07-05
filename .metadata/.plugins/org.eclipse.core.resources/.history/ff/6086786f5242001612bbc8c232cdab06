@@ -1,0 +1,15 @@
+package testNumber;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		LargeNumber test = new LargeNumber("999");
+		LargeNumber test1 = new LargeNumber("122");
+//		LargeNumber test2 = new LargeNumber("2");
+		
+		System.out.println(test.multiply(test1).toString());
+//		System.out.println("Simple"+ LargeNumber.multiplyDigit(test2,Integer.parseInt(test1.toString())).toString());
+//		System.out.println(LargeNumber.multiplyDigit(test, 2));
+	}
+}

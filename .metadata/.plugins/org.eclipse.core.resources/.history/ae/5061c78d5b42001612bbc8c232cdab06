@@ -1,0 +1,13 @@
+package testNumber;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		LargeNumber test = new LargeNumber("222");
+		LargeNumber test1 = new LargeNumber("9");
+
+		//System.out.println(test.multiply(test1).toString());
+		System.out.println(LargeNumber.multiplyDigit(test, 4));
+	}
+}

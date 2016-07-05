@@ -1,0 +1,12 @@
+package testNumber;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		LargeNumber test = new LargeNumber("1029193");
+		LargeNumber test1 = new LargeNumber("2");
+		
+		System.out.println(test.multiply(test1).toString());
+	}
+}

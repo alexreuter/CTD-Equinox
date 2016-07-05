@@ -3,12 +3,10 @@ import acm.graphics.*;
 import java.awt.event.MouseEvent;
 import java.awt.Color;
 
-//Ideas. Blinking ball, rotating paddle
-
 public class Box extends GraphicsProgram
 {
 	private Ball[] myBall;
-	private int size = 10;
+	private int size = 5;
 	
     private Paddle topPaddle;
     private Paddle bottomPaddle;
@@ -34,7 +32,7 @@ public class Box extends GraphicsProgram
         
         for (int k = 0 ; k < size ; k++)
         {
-            myBall[k] = new BlinkingBall(getWidth() * Math.random(),  
+            myBall[k] = new PulsingBall(getWidth() * Math.random(),  
                                  getHeight() * Math.random(), 
                                  (Math.random()*9) + 2, 
                                  new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random())), 
@@ -54,7 +52,7 @@ public class Box extends GraphicsProgram
             for (int k = 0 ; k < size ; k++)
             	myBall[k].move();
             
-            pause(10);
+            pause(50);
             
         }
     }

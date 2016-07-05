@@ -208,6 +208,19 @@
     "javaRuntime": true
   },
   {
+    "symbolicName": "acm",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "b36de83365283c9e965c701a2218b43aa715fede",
+    "jarFileModificationDate": "2016-07-04T09:36:58-05:00",
+    "location": "/Users/alex_reuter/Downloads/acm.jar",
+    "javaRuntime": false
+  },
+  {
     "symbolicName": "jre",
     "version": {
       "major": 1,

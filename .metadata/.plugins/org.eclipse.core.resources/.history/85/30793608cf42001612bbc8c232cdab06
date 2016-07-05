@@ -1,0 +1,52 @@
+import java.awt.Color;
+
+
+public class RubberBall extends Ball
+{
+	private double myXVelocity;
+    private double myYVelocity;
+    private Box myBox;
+    private double mySize;
+    private int myWidth;
+    
+	public RubberBall(double x, double y, double size, Color c, double xVel, double yVel, Box box) 
+	{
+		super(x, y, size, c, xVel, yVel, box);
+		myBox = box;
+		mySize = size;
+	}
+	
+	public void move()
+	{
+		
+		if(myApproaching)
+		{
+			myWidth = myWidth - 1;
+			setBounds(getX(),getY(),myWidth,mySize);
+			
+			if(myWidth == 0)
+			{
+				myXVelocity = -myXVelocity;
+				myApproaching = false;
+			}
+		}
+		else if (getX()+(super.getWidth()) >= myBox.getWidth())
+		{
+			myXVelocity = -myXVelocity;
+		}
+           
+		else if (getY() <= 0)
+		{
+			myYVelocity = -myYVelocity;
+		}
+           
+		else if (getY()+(super.getWidth()) >= myBox.getHeight())
+		{
+			
+		}
+		else
+		{
+			myApproaching = false;
+		}	
+	}
+}

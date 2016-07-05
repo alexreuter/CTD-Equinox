@@ -34,5 +34,25 @@
     "location": "/Users/alex_reuter/Desktop/Equinox CTD/Lab5/src",
     "status": "UNRESOLVED",
     "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Lab5/src\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/Lab6/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/Lab6/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Lab6/src\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Downloads/acm.jar": {
+    "location": "/Users/alex_reuter/Downloads/acm.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027/Users/alex_reuter/Downloads/acm.jar\u0027. Neither fingerprint \u0027b36de83365283c9e965c701a2218b43aa715fede\u0027 nor symbolic name \u0027acm\u0027 are known."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/testNumber/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/testNumber/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/testNumber/src\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet8/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet8/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Worksheet8/src\u0027. Skipped."
   }
 }

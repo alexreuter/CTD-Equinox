@@ -1,0 +1,9 @@
+import acm.program.*;
+import acm.graphics.*;
+import java.awt.Color;
+
+
+public class MiddlePaddle extends GRect
+{
+
+}

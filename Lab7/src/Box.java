@@ -3,17 +3,18 @@ import acm.graphics.*;
 import java.awt.event.MouseEvent;
 import java.awt.Color;
 
-//Ideas. Blinking ball, rotating paddle
 
 public class Box extends GraphicsProgram
 {
 	private Ball[] myBall;
-	private int size = 10;
+	private int size = 1;
 	
     private Paddle topPaddle;
     private Paddle bottomPaddle;
     private Paddle leftPaddle;
     private Paddle rightPaddle;
+    private static boolean myOver = false;
+    private Score myScore = new Score(0,10);
     
     public void init()
     {
@@ -31,16 +32,18 @@ public class Box extends GraphicsProgram
         add(bottomPaddle);
         add(leftPaddle);
         add(rightPaddle);
+
+        add(myScore);
         
         for (int k = 0 ; k < size ; k++)
         {
-            myBall[k] = new Ball(getWidth() * Math.random(),  
-                                 getHeight() * Math.random(), 
-                                 (Math.random()*9) + 2, 
+            myBall[k] = new Ball(this.getWidth()/2,  
+            					 this.getHeight()/2,
+                                 20, 
                                  new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random())), 
                                  10 * Math.random() - 5, 
                                  10 * Math.random() - 5, 
-                                 this);
+                                 this,myScore);
         	add(myBall[k]);
         }
         
@@ -49,13 +52,17 @@ public class Box extends GraphicsProgram
     
     public void run()
     {
-        while (true)
+    	int pauseTime = 50;
+        while (!myOver)
         {
             for (int k = 0 ; k < size ; k++)
             	myBall[k].move();
             
-            pause(100);
-            
+            if(Integer.parseInt(myScore.toString()) % 100 == 0 && Integer.parseInt(myScore.toString()) != 0)
+            {
+            	pauseTime -= 20;
+            }
+            pause(pauseTime);
         }
     }
     
@@ -103,4 +110,9 @@ public class Box extends GraphicsProgram
     	topPaddle.setX(x);
     	bottomPaddle.setX(x);
     }
+
+	public static void gameOver() 
+	{
+		myOver = true;
+	}
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Paddle.java&apos; to &apos;Lab7/src/(default package)&apos;&#x0A;- Original project: &apos;Worksheet1&apos;&#x0A;- Destination element: &apos;Lab7/src/(default package)&apos;&#x0A;- Original element: &apos;Paddle.java&apos;&#x0A;- Update references to refactored element" description="Move file" destination="=Lab7/src&lt;" element1="Paddle.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1467747030588" units="0" version="1.0"/>
+</session>

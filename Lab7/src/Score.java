@@ -1,0 +1,26 @@
+import java.awt.Color;
+
+import acm.graphics.GLabel;
+
+
+public class Score extends GLabel
+{
+	private static int myScore = 0;
+	
+	public Score(int x, int y)
+	{
+		super("Score: " + Integer.toString(myScore),x,y);
+		this.setColor(Color.black);
+	}
+	
+	public void add(int digit)
+	{
+		myScore += digit;
+		this.setLabel("Score: " + Integer.toString(myScore));
+	}
+	
+	public String toString()
+	{
+		return Integer.toString(myScore);
+	}
+}

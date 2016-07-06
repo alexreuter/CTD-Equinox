@@ -1,0 +1,14 @@
+import acm.graphics.GLabel;
+
+
+public class Score extends GLabel
+{
+	private int myScore;
+	
+	public Score(int score)
+	{
+		super(Integer.toString(score));
+	}
+	
+	
+}

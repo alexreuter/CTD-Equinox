@@ -1,0 +1,18 @@
+import acm.graphics.GLabel;
+
+
+public class Score extends GLabel
+{
+	private static int myScore = 0;
+	
+	public Score(int x, int y)
+	{
+		super(Integer.toString(myScore),x,y);
+		System.out.println(this.getHeight());
+	}
+	
+	public void add(int digit)
+	{
+		myScore += digit;
+	}
+}

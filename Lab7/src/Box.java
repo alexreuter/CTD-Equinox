@@ -7,8 +7,9 @@ import java.awt.Color;
 public class Box extends GraphicsProgram
 {
 	private Ball[] myBall;
-	private int size = 2;
+	private int size = 1;
 	
+	private Gremlin myGremlin;
     private Paddle topPaddle;
     private Paddle bottomPaddle;
     private Paddle leftPaddle;
@@ -28,7 +29,9 @@ public class Box extends GraphicsProgram
         bottomPaddle = new Paddle(0,this.getHeight()-scalableHeight,scalableWidth,scalableHeight,Color.RED);
         leftPaddle = new Paddle(0,0,scalableHeight,scalableWidth,Color.RED);
         rightPaddle = new Paddle(this.getWidth()-scalableHeight,0,scalableHeight,scalableWidth,Color.RED);
-    	
+        
+       
+        
         add(topPaddle);
         add(bottomPaddle);
         add(leftPaddle);
@@ -48,6 +51,9 @@ public class Box extends GraphicsProgram
         	add(myBall[k]);
         }
         
+        myGremlin = new Gremlin(Color.orange,this,myScore,myBall);
+    	add(myGremlin);
+        
         addMouseListeners();
     }
     
@@ -59,9 +65,15 @@ public class Box extends GraphicsProgram
             for (int k = 0 ; k < size ; k++)
             	myBall[k].move();
             
+            myGremlin.move();
+            
             if(Integer.parseInt(myScore.toString()) % 100 == 0 && Integer.parseInt(myScore.toString()) != 0)
             {
             	pauseTime -= 20;
+            	if(pauseTime<10)
+            	{
+            		pauseTime = 10;
+            	}
             }
             pause(pauseTime);
         }

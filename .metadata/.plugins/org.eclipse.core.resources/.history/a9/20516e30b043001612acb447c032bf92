@@ -1,0 +1,19 @@
+import java.awt.Color;
+
+
+public class Gremlin extends Paddle
+{
+	public Gremlin(double x, double y, double size, Color c)
+    {
+		super(x,y,size,size,c);
+    }
+	
+	public void move()
+	{
+		while(true)
+		{
+			
+			pause((int)(Math.random() * 400)*1000);
+		}
+	}
+}

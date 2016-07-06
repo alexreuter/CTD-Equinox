@@ -1,0 +1,61 @@
+import java.awt.Color;
+
+
+public class Gremlin extends InvisibleBall
+{
+	private boolean hiding = false;
+	private Score myScore; 
+	private Ball[] myBalls; 
+	private int runMax = (int) (Math.random() * maxTime) + 1;
+	private int runCounter = 0;
+	
+	public Gremlin(Color c,Box box,Score score,Ball[] myBalls)
+    {
+		super((box.getWidth()*Math.random()),(box.getHeight()*Math.random()),200,c,0.0,0.0,box,score);
+		myScore = score;
+		InvisibleBall.maxTime = 5;
+		this.myBalls = myBalls;
+    }
+	
+	public void move()
+	{
+		if(runCounter>runMax && hiding == true)
+		{
+			hiding = !hiding;
+			runMax = (1000/Box.pauseTime)*2;
+			runCounter = 0;
+		}
+		
+		if(runCounter>runMax && hiding == false)
+		{
+			hiding = !hiding;
+			runMax = (int) (Math.random() * maxTime) + 1;
+			runCounter = 0;
+		}
+		
+		if(hiding)
+		{
+			setVisible(false);
+		}
+		else
+		{
+			setVisible(true);
+		}
+		
+		runCounter ++;
+		super.move();
+		
+		for(int i = 0;i<myBalls.length;i++)
+		{
+			if(this.contains(myBalls[i].getX(),myBalls[i].getY()))
+			{
+				myScore.add((int)(Math.random()*41)+10);
+				System.out.println("Hit the gremlin");
+			}
+			else
+			{
+				System.out.println("Not in Gremlin");
+			}
+		}
+	}
+}

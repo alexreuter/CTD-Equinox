@@ -1,0 +1,24 @@
+import java.awt.Color;
+
+
+public class Gremlin extends InvisibleBall
+{
+	private boolean hiding = false;
+	private Score myScore; 
+	
+	public Gremlin(double size, Color c,Box box,Score score)
+    {
+		super((box.getWidth()*Math.random()),(box.getHeight()*Math.random()),size,c,0.0,0.0,box,score);
+		myScore = score;
+    }
+	
+	public void move()
+	{
+		if(this.contains(getX(),getY()))
+		{
+			myScore.add(1);
+		}
+		
+		super.move();
+	}
+}

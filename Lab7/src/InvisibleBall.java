@@ -2,11 +2,11 @@ import java.awt.Color;
 
 public class InvisibleBall extends Ball
 {
-	private int maxTime = 10;
-	private int runMax = (int) (Math.random() * maxTime) + 1;
+	public static int maxTime = 15;
+	private int runMax = (int) (Math.random() * ((1000/Box.pauseTime)*maxTime)) + 1;
 	private int runCounter = 0;
 	private boolean hiding = false;
-	private Box box;
+	public static Box box;
 	private boolean isVisible = false;
 	
 	public InvisibleBall(double x, double y, double size, Color c, double xVel, double yVel, Box box,Score score)
@@ -19,15 +19,17 @@ public class InvisibleBall extends Ball
 	{
 		if(runCounter>runMax && hiding == true)
 		{
+			//Now ball is shown
 			hiding = !hiding;
-			runMax = (1000/Box.pauseTime)*2;
+			runMax = (int) (Math.random() * ((1000/Box.pauseTime)*maxTime)) + 1;
 			runCounter = 0;
 		}
 		
 		if(runCounter>runMax && hiding == false)
 		{
+			//Now box is hidden
 			hiding = !hiding;
-			runMax = (int) (Math.random() * maxTime) + 1;
+			runMax = (1000/Box.pauseTime)*1;
 			runCounter = 0;
 		}
 		

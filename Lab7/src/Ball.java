@@ -51,7 +51,6 @@ public class Ball extends GOval
         		getY() >= myBox.getLeftPaddle().getY() && getY() <= myBox.getLeftPaddle().getY() + myBox.getLeftPaddle().getHeight())
         {
         	myXVelocity = -myXVelocity;
-        	System.out.println("Hit left paddle");
         	score.add(1);
         	myBox.getLeftPaddle().setSize(myBox.getLeftPaddle().getWidth(), myBox.getLeftPaddle().getHeight()-1);
         }
@@ -61,7 +60,6 @@ public class Ball extends GOval
         		getY()<=myBox.getRightPaddle().getY() + myBox.getRightPaddle().getHeight())
         {
         	myXVelocity = -myXVelocity;
-        	System.out.println("Hit RIGHT paddle");
         	score.add(1);
         	myBox.getRightPaddle().setSize(myBox.getRightPaddle().getWidth(), myBox.getRightPaddle().getHeight()-1);
         }
@@ -70,7 +68,6 @@ public class Ball extends GOval
         		getX()<=myBox.getTopPaddle().getX() + myBox.getTopPaddle().getWidth())
         {
         	myYVelocity = -myYVelocity;
-        	System.out.println("Hit top paddle");
         	score.add(1);
         	myBox.getTopPaddle().setSize(myBox.getTopPaddle().getWidth()-1, myBox.getTopPaddle().getHeight());
         }
@@ -79,7 +76,6 @@ public class Ball extends GOval
         		getX()<=myBox.getBottomPaddle().getX() + myBox.getBottomPaddle().getWidth())
         {
         	myYVelocity = -myYVelocity;
-        	System.out.println("Hit bottom paddle");
         	score.add(1);
         	myBox.getBottomPaddle().setSize(myBox.getBottomPaddle().getWidth()-1, myBox.getBottomPaddle().getHeight());
         }

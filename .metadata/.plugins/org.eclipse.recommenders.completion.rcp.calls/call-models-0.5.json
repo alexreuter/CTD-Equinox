@@ -54,5 +54,10 @@
     "location": "/Users/alex_reuter/Desktop/Equinox CTD/Worksheet8/src",
     "status": "UNRESOLVED",
     "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Worksheet8/src\u0027. Skipped."
+  },
+  "/Users/alex_reuter/Desktop/Equinox CTD/Lab7/src": {
+    "location": "/Users/alex_reuter/Desktop/Equinox CTD/Lab7/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/alex_reuter/Desktop/Equinox CTD/Lab7/src\u0027. Skipped."
   }
 }

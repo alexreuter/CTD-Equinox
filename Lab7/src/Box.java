@@ -7,7 +7,7 @@ import java.awt.Color;
 public class Box extends GraphicsProgram
 {
 	private Ball[] myBall;
-	private int size = 1;
+	private int size = 2;
 	
     private Paddle topPaddle;
     private Paddle bottomPaddle;
@@ -15,6 +15,7 @@ public class Box extends GraphicsProgram
     private Paddle rightPaddle;
     private static boolean myOver = false;
     private Score myScore = new Score(0,10);
+    static int pauseTime = 50;
     
     public void init()
     {
@@ -37,7 +38,7 @@ public class Box extends GraphicsProgram
         
         for (int k = 0 ; k < size ; k++)
         {
-            myBall[k] = new Ball(this.getWidth()/2,  
+            myBall[k] = new InvisibleBall(this.getWidth()/2,  
             					 this.getHeight()/2,
                                  20, 
                                  new Color((int)(256 * Math.random()), (int)(256 * Math.random()), (int)(256 * Math.random())), 
@@ -52,7 +53,7 @@ public class Box extends GraphicsProgram
     
     public void run()
     {
-    	int pauseTime = 50;
+    	
         while (!myOver)
         {
             for (int k = 0 ; k < size ; k++)

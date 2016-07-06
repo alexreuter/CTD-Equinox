@@ -1,0 +1,30 @@
+import java.awt.Color;
+
+
+public class InvisibleBall extends Ball
+{
+	private int runCounter = 0;
+	private boolean isVisible = false;
+	
+	public InvisibleBall(double x, double y, double size, Color c, double xVel, double yVel, Box box,Score score)
+    {
+        super(x, y, size,c,xVel,yVel,box,score);
+    }
+	
+	public void move()
+	{
+		waitRandomTime();
+		waitRandomTime();
+		while(isVisible)
+		{
+			setVisible(true);
+		}
+
+	}
+	
+	public void waitRandomTime()
+	{
+		pause(Math.random()*10);
+		isVisible = !isVisible;
+	}
+}

@@ -1,0 +1,19 @@
+import java.awt.Color;
+
+
+public class Gremlin extends Ball
+{
+	public Gremlin(double x, double y, double size, Color c, Box box,Score score)
+    {
+		super(x,y,size,c,0.0,0.0,box,score);
+    }
+	
+	public void move()
+	{
+		while(true)
+		{
+			
+			pause((int)(Math.random() * 400)*1000);
+		}
+	}
+}

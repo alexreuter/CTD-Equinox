@@ -8,7 +8,7 @@ import java.awt.Color;
 
 public class Ball extends GOval
 {
-    private double myXVelocity;
+	private double myXVelocity;
     private double myYVelocity;
     private Box myBox;
     private double mySize;
